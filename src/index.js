@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 ////import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { DndProvider } from 'react-dnd';
-import { HTML5Backend } from 'react-dnd-html5-backend';
+//import { DndProvider } from 'react-dnd';
+//import { HTML5Backend } from 'react-dnd-html5-backend';
+import { DndProvider } from 'react-dnd-multi-backend';
+import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch'; 
 
 ReactDOM.render(
   <React.StrictMode>
-    <DndProvider backend={HTML5Backend}>
+    <DndProvider options={HTML5toTouch}> {/* formerly instead of options=..., backend={HTML5Backend} */}
       <App />
     </DndProvider>
   </React.StrictMode>,
